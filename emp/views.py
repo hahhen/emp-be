@@ -13,8 +13,9 @@ def collection(request):
 
 
 def product_query(request, slug):
-    product_obj = models.Product.objects.filter(slug=slug).order_by('-id').values()
-    return JsonResponse({"product": list(product_obj)})
+    product_obj = models.Product.objects.filter(slug=slug).values()
+    collection = models.Collection.objects.filter(id=models.Product.objects.get(slug=slug).collection_id).values()
+    return JsonResponse({"product": list(product_obj), "collection": list(collection)})
 
 
 def collection_query(request, slug):
