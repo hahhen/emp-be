@@ -20,6 +20,7 @@ class Product(models.Model):
     collection = models.ForeignKey(Collection, models.DO_NOTHING, blank=True, null=True)
     picture = models.TextField(blank=True, null=True)  # This field type is a guess.
     slug = models.TextField(blank=True, null=True)
+    details = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
