@@ -5,6 +5,7 @@ class Collection(models.Model):
     name = models.TextField(blank=True, null=True)
     date = models.DateField(blank=True, null=True)
     slug = models.TextField(blank=True, null=True)
+    banner = models.TextFiled(blank=True, null=True)
 
     class Meta:
         managed = False
